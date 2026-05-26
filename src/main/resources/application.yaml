@@ -2,35 +2,28 @@ spring:
   application:
     name: wontaegyu
 
-  spring:
-    # 1. MariaDB 데이터베이스 연동 설정
-    datasource:
-      driver-class-name: org.mariadb.jdbc.Driver
-      # 로컬 DB 이름이나 팀 DB 주소에 맞게 포트(3306) 뒤의 이름을 수정해줘!
-      url: jdbc:mariadb://localhost:3306/haksik_mate
-      username: root
-      password: 1234
+  datasource:
+    url: jdbc:mariadb://localhost:3306/aidb
+    username: root
+    password: 1234
+    driver-class-name: org.mariadb.jdbc.Driver
 
-    # 2. JPA 및 하이버네이트 설정
-    jpa:
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
       hibernate:
-        # 개발 초기에는 테이블 구조가 바뀔 수 있으니 update나 create-drop을 많이 써!
-        ddl-auto: update
-      show-sql: true # 실행되는 SQL을 콘솔에 예쁘게 보여줘!
-      properties:
-        hibernate:
-          format_sql: true # SQL을 한눈에 보기 좋게 정렬해줘!
+        format_sql: true
 
-    # 3. 학교 메일 인증을 위한 SMTP 서버 설정 (예시: Gmail 기준)
-    mail:
-      host: smtp.gmail.com
-      port: 587
-      username: 오빠네_프로젝트_구글이메일
-      password: 구글_앱_비밀번호
-      properties:
-        mail:
-          smtp:
-            auth: true
-            starttls:
-              enable: true
-
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: 오빠네_프로젝트_구글이메일
+    password: 구글_앱_비밀번호
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true

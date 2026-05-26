@@ -7,6 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class WontaegyuApplication {
 
     public static void main(String[] args) {
+        System.out.println("왔다감");
         SpringApplication.run(WontaegyuApplication.class, args);
     }
 

@@ -30,3 +30,4 @@ CREATE TABLE EMAIL_VERIFICATION (
                                     is_verified CHAR(1) NOT NULL DEFAULT 'N' COMMENT '인증 완료 여부 (Y/N)',
                                     created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '생성일시'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+--test
